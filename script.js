@@ -119,8 +119,8 @@ function performAnalysis() {
 
         total += currProfitLoss;
     
-        console.log(`Date ${currDate} Profit/Loss ${currProfitLoss}`);
-        console.log(`total ${total}`);
+        //console.log(`Date ${currDate} Profit/Loss ${currProfitLoss}`);
+        //console.log(`total ${total}`);
   
         
         if (currProfitLoss > 0 &&
@@ -164,20 +164,20 @@ function calcAverageProfLossChange() {
         // Compare ProfitLoss between each month 
         secondIdx = firstIdx+1;
     
-        console.log("AverageChange " + finances[secondIdx][PROFIT_LOSS_IDX]+ " - " + finances[firstIdx][PROFIT_LOSS_IDX]);
+        //console.log("AverageChange " + finances[secondIdx][PROFIT_LOSS_IDX]+ " - " + finances[firstIdx][PROFIT_LOSS_IDX]);
         currChange = finances[secondIdx][PROFIT_LOSS_IDX] - finances[firstIdx][PROFIT_LOSS_IDX];
-        console.log("currChange = " + currChange);
+        //console.log("currChange = " + currChange);
 
         totalChange += finances[secondIdx][PROFIT_LOSS_IDX] - finances[firstIdx][PROFIT_LOSS_IDX];
-        console.log("totalChange " + totalChange);
+        //console.log("totalChange " + totalChange);
     
     }
 
     averageChange = totalChange / (totalMonths - 1);
     averageChange2Dp = Math.round(averageChange * 100) / 100;
 
-    console.log("averageChange = " + averageChange);
-    console.log("averageChange2Dp = " + averageChange2Dp);
+    //console.log("averageChange = " + averageChange);
+    //console.log("averageChange2Dp = " + averageChange2Dp);
 
 }
 
