@@ -28,13 +28,18 @@ The basic program makes  use of use:
 
 
 ## Usage
-Live app can be found at https://ateki.github.io/
-
-## Screenshots
-
+Live app can be found at https://ateki.github.io/Console-Finances/
 
 ### Home page
-<img src=assets/images/home_screenshot.png alt="Home Screen" width="200" style=" margin-right: 10px;" />
+The following page will be displayed. <br>
+<img src=assets/images/home_screenshot.png alt="Home Screen"  width="400" style=" margin-right: 10px; border: 2px solid #555;"  />
+
+
+## Screenshots
+From the main page,  inspect the Console window to view basic financial analysis results.<br>
+<img src=assets/images/example_console_output.png alt="Example Console Output" width="400" style=" margin-right: 10px; border: 2px solid #555;" />
+
+
 
 
 ## License
