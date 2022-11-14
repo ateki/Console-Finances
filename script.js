@@ -182,26 +182,36 @@ function calcAverageProfLossChange() {
 }
 
 
+/*
+ *  Builds up report and returns report string
+ */
+function buildReport() {
+    var reportTitle = "Financial Analysis \n" +
+                      "---------------------------\n";
+    var reportTotalMonths = `Total Months: ${totalMonths} \n`;
+    var reportTotal=  `Total: ${CURR_SYMBOL}${total} \n`;
+    var reportAverageChange = `Average Change: ${CURR_SYMBOL}${averageChange2Dp} \n`;
+    var reportIncreaseProfits = `Greatest Increase in Profits: ${largestProfitIncr[DATE_IDX]}  (${CURR_SYMBOL}${largestProfitIncr[PROFIT_LOSS_IDX]}) \n`;
+    var reportDecreaseProfits = `Greatest Decrease in Profits: ${largestProfitDecr[DATE_IDX]}  (${CURR_SYMBOL}${largestProfitDecr[PROFIT_LOSS_IDX]}) \n`;
+
+    var fullReport = reportTitle +
+                        reportTotalMonths + 
+                        reportTotal +
+                        reportAverageChange +
+                        reportIncreaseProfits +
+                        reportDecreaseProfits;
+
+    return fullReport;
+}
 
 
  /*
-  * Print Report - basic report to console only.
+  * Print report - basic report to console only for now.
   */
- function printReport() {
-
-    
-    var report = "Financial Analysis \n" +
-            "---------------------------\n" +
-            "Total Months: " + totalMonths + "\n" +
-            "Total: "+ CURR_SYMBOL + total +  "\n" +
-            "Average Change: " + CURR_SYMBOL + + averageChange2Dp  + " \n" +
-            "Greatest Increase in Profits: " + largestProfitIncr[DATE_IDX] + 
-                "\0(" + CURR_SYMBOL + largestProfitIncr[PROFIT_LOSS_IDX] + ")\n" +
-            "Greatest Decrease in Profits: " + largestProfitDecr[DATE_IDX] + 
-             "\0(" + CURR_SYMBOL + + largestProfitDecr[PROFIT_LOSS_IDX] + ")\n" ;
-             
-    console.log(report);
+function printReport(fullReport) {
+    console.log(fullReport);
 }
+
 
 
 /*  MAIN FUNCTION DEFINITION and CALL*/
@@ -214,7 +224,7 @@ function main() {
 
     verifyData();
     performAnalysis();
-    printReport();
+    printReport(buildReport());
 
 }
 
